@@ -15,5 +15,5 @@ public partial class User
 
     public string Role { get; set; } = null!;
 
-    public string? Notes { get; set; }
+    
 }

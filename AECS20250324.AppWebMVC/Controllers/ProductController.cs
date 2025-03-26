@@ -30,8 +30,9 @@ namespace AECS20250324.AppWebMVC.Controllers
             var query = _context.Products.AsQueryable();
             if (!string.IsNullOrWhiteSpace(producto.ProductName))
                 query = query.Where(s => s.ProductName.Contains(producto.ProductName));
-            if (!string.IsNullOrWhiteSpace(producto.Description))
-                query = query.Where(s => s.Description.Contains(producto.Description));
+            if (producto.Price > 0)
+                query = query.Where(s => s.Price == producto.Price);
+
             if (producto.BrandId > 0)
                 query = query.Where(s => s.BrandId == producto.BrandId);
             if (producto.WarehouseId > 0)

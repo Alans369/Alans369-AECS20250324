@@ -24,7 +24,7 @@ public partial class Test20250324DbContext : DbContext
     public virtual DbSet<Warehouse> Warehouses { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+#warning 
         => optionsBuilder.UseSqlServer("Data Source=.;Initial Catalog=Test20250324DB;Integrated Security=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -47,7 +47,6 @@ public partial class Test20250324DbContext : DbContext
 
             entity.Property(e => e.BrandId).HasColumnName("BrandID");
             entity.Property(e => e.Description).HasColumnType("text");
-            entity.Property(e => e.Notes).HasColumnType("text");
             entity.Property(e => e.Price).HasColumnType("decimal(10, 2)");
             entity.Property(e => e.ProductName)
                 .HasMaxLength(255)
@@ -73,7 +72,6 @@ public partial class Test20250324DbContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(255)
                 .IsUnicode(false);
-            entity.Property(e => e.Notes).HasColumnType("text");
             entity.Property(e => e.Password)
                 .HasMaxLength(32)
                 .IsUnicode(false)
@@ -90,7 +88,6 @@ public partial class Test20250324DbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Warehous__3214EC07896F6787");
 
-            entity.Property(e => e.Notes).HasColumnType("text");
             entity.Property(e => e.WarehouseName)
                 .HasMaxLength(255)
                 .IsUnicode(false);

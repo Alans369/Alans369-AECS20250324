@@ -15,8 +15,8 @@
         </div>
         <div class="col-8">
             <div class="form-group">
-                <label class="control-label">Descripcion</label>
-                <textarea name=" Description" class="form-control"></textarea>
+                <label class="control-label">Price</label>
+                <input type="number" step="0.01" name="Price" class="form-control">
             </div>
         </div>
 
@@ -73,9 +73,7 @@
             <th>
                     @Html.DisplayNameFor(model => model.PurchasePrice)
             </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.Notes)
-            </th>
+
             <th>
                     @Html.DisplayNameFor(model => model.Brand)
             </th>
@@ -102,9 +100,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.PurchasePrice)
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Notes)
-                </td>
+                
                 <td>
                     @Html.DisplayFor(modelItem => item.Brand.BrandName)
                 </td>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace AECS20250324.AppWebMVC.Models;
 
@@ -11,6 +12,8 @@ public partial class Product
 
     public string? Description { get; set; }
 
+
+    [RegularExpression(@"^\d+(\.\d{1,2})?$", ErrorMessage = "El precio debe tener solo numeros")]
     public decimal Price { get; set; }
 
     public decimal PurchasePrice { get; set; }
@@ -19,7 +22,6 @@ public partial class Product
 
     public int? BrandId { get; set; }
 
-    public string? Notes { get; set; }
 
     public virtual Brand? Brand { get; set; }
 

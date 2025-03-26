@@ -7,9 +7,15 @@
 <h1>Create</h1>
 
 <h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="container-fluid py-4">
+    <div class="card shadow-lg">
+        <div class="card-header bg-primary text-white">
+            <h1 class="h4 mb-0">
+                Craer Productos
+            </h1>
+        </div>
+
+        <div class="col-md-4 row justify-content-center">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -45,9 +51,10 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+                
+        </div>
     </div>
 </div>
-
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

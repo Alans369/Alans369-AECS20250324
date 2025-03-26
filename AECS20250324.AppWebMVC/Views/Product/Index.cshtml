@@ -3,119 +3,280 @@
 @{
     ViewData["Title"] = "Index";
 
-    }
-<h1>Buscar productos</h1>
-<form asp-action="Index">
-    <div class="row">
-        <div class="col-4">
-            <div class="form-group">
-                <label class="control-label">Nombre</label>
-                <input type="text" name="ProductName" class="form-control" />
-            </div>
-        </div>
-        <div class="col-8">
-            <div class="form-group">
-                <label class="control-label">Price</label>
-                <input type="number" step="0.01" name="Price" class="form-control">
-            </div>
-        </div>
+}
 
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <div class="form-group">
-                <label class="control-label">Brand</label>
-                <select name="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="form-group">
-                <label class="control-label">Bodeja</label>
-                <select name="WarehouseId" class="form-control" asp-items="ViewBag.WarehouseId"></select>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="form-group">
-                <label class="control-label">Cant. Registros</label>
-                <select name="topRegistro" class="form-control">
-                    <option selected value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="60">60</option>
-                    <option value="100">100</option>
-                    <option value="500">500</option>
-                    <option value="1000">1000</option>
-                    <option value="0">Todos</option>
-                </select>
-            </div>
-        </div>
-    </div>
-    <div class="row mt-3">
-        <div class="col-12">
-            <input type="submit" value="Buscar" class="btn btn-primary" />
-            <a class="btn btn-info" asp-action="Create">Ir a crear</a>
-        </div>
-    </div>
-</form>
 
-<table class="table" id="myTable">
-    <thead>
-        <tr>
-        <tr>
-            <th>
-                    @Html.DisplayNameFor(model => model.ProductName)
-            </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.PurchasePrice)
-            </th>
+@* <h1>Buscar productos</h1> *@
+@* <form asp-action="Index"> *@
+@*     <div class="row"> *@
+@*         <div class="col-4"> *@
+@*             <div class="form-group"> *@
+@*                 <label class="control-label">Nombre</label> *@
+@*                 <input type="text" name="ProductName" class="form-control" /> *@
+@*             </div> *@
+@*         </div> *@
+@*         <div class="col-8"> *@
+@*             <div class="form-group"> *@
+@*                 <label class="control-label">Price</label> *@
+@*                 <input type="number" step="0.01" name="Price" class="form-control"> *@
+@*             </div> *@
+@*         </div> *@
 
-            <th>
-                    @Html.DisplayNameFor(model => model.Brand)
-            </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.Warehouse)
-            </th>
-            <th></th>
-        </tr>
+@*     </div> *@
+@*     <div class="row"> *@
+@*         <div class="col-4"> *@
+@*             <div class="form-group"> *@
+@*                 <label class="control-label">Brand</label> *@
+@*                 <select name="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select> *@
+@*             </div> *@
+@*         </div> *@
+@*         <div class="col-4"> *@
+@*             <div class="form-group"> *@
+@*                 <label class="control-label">Bodeja</label> *@
+@*                 <select name="WarehouseId" class="form-control" asp-items="ViewBag.WarehouseId"></select> *@
+@*             </div> *@
+@*         </div> *@
+@*         <div class="col-4"> *@
+@*             <div class="form-group"> *@
+@*                 <label class="control-label">Cant. Registros</label> *@
+@*                 <select name="topRegistro" class="form-control"> *@
+@*                     <option selected value="10">10</option> *@
+@*                     <option value="20">20</option> *@
+@*                     <option value="60">60</option> *@
+@*                     <option value="100">100</option> *@
+@*                     <option value="500">500</option> *@
+@*                     <option value="1000">1000</option> *@
+@*                     <option value="0">Todos</option> *@
+@*                 </select> *@
+@*             </div> *@
+@*         </div> *@
+@*     </div> *@
+@*     <div class="row mt-3"> *@
+@*         <div class="col-12"> *@
+@*             <input type="submit" value="Buscar" class="btn btn-primary" /> *@
+@*             <a class="btn btn-info" asp-action="Create">Ir a crear</a> *@
+@*         </div> *@
+@*     </div> *@
+@* </form> *@
+
+@* <table class="table" id="myTable"> *@
+@*     <thead> *@
+@*         <tr> *@
+@*         <tr> *@
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.ProductName) *@
+@*             </th> *@
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.Description) *@
+@*             </th> *@
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.Price) *@
+@*             </th> *@
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.PurchasePrice) *@
+@*             </th> *@
+
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.Brand) *@
+@*             </th> *@
+@*             <th> *@
+@*                     @Html.DisplayNameFor(model => model.Warehouse) *@
+@*             </th> *@
+@*             <th></th> *@
+@*         </tr> *@
        
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PurchasePrice)
-                </td>
+@*     </thead> *@
+@*     <tbody> *@
+@*         @foreach (var item in Model) *@
+@*         { *@
+@*             <tr> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.ProductName) *@
+@*                 </td> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.Description) *@
+@*                 </td> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.Price) *@
+@*                 </td> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.PurchasePrice) *@
+@*                 </td> *@
                 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Brand.BrandName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Warehouse.WarehouseName)
-                </td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.Brand.BrandName) *@
+@*                 </td> *@
+@*                 <td> *@
+@*                     @Html.DisplayFor(modelItem => item.Warehouse.WarehouseName) *@
+@*                 </td> *@
+@*                 <td> *@
+@*                     <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> | *@
+@*                     <a asp-action="Details" asp-route-id="@item.Id">Details</a> | *@
+@*                     <a asp-action="Delete" asp-route-id="@item.Id">Delete</a> *@
+@*                 </td> *@
+@*             </tr> *@
+@*         } *@
+@*     </tbody> *@
+@* </table> *@
+@* @section Scripts { *@
+@*     <script> *@
+@*         $(document).ready(function() { *@
+@*              // $('#myTable').DataTable(); *@
+
+@*             // $('#myTable').DataTable({ *@
+@*             //      "language": { *@
+@*             //     "url": "//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json" *@
+@*             //     } *@
+@*             // }); *@
+
+@*              $('#myTable').DataTable({ *@
+@*                "language":languageTable *@
+@*              }); *@
+@*         }); *@
+@*     </script> *@
+@* } *@
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h1 class="display-6 text-primary">
+                <i class="bi bi-building-fill me-2"></i>Gestión de productos
+            </h1>
+        </div>
+    </div>
+
+
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-light">
+           <form asp-action="Index"> 
+     <div class="row"> 
+         <div class="col-4"> 
+             <div class="form-group"> 
+                 <label class="control-label">Nombre</label> 
+                 <input type="text" name="ProductName" class="form-control" /> 
+             </div> 
+         </div> 
+         <div class="col-8"> 
+             <div class="form-group"> 
+                 <label class="control-label">Price</label> 
+                 <input type="number" step="0.01" name="Price" class="form-control"> 
+             </div> 
+         </div> 
+
+     </div> 
+     <div class="row"> 
+         <div class="col-4"> 
+             <div class="form-group"> 
+                 <label class="control-label">Brand</label> 
+                 <select name="BrandId" class="form-control" asp-items="ViewBag.BrandId"></select> 
+             </div> 
+         </div> 
+         <div class="col-4"> 
+             <div class="form-group"> 
+                 <label class="control-label">Bodeja</label> 
+                 <select name="WarehouseId" class="form-control" asp-items="ViewBag.WarehouseId"></select> 
+             </div> 
+         </div> 
+         <div class="col-4"> 
+             <div class="form-group"> 
+                 <label class="control-label">Cant. Registros</label> 
+                 <select name="topRegistro" class="form-control"> 
+                     <option selected value="10">10</option> 
+                     <option value="20">20</option> 
+                     <option value="60">60</option> 
+                     <option value="100">100</option> 
+                     <option value="500">500</option> 
+                     <option value="1000">1000</option> 
+                     <option value="0">Todos</option> 
+                 </select> 
+             </div> 
+         </div> 
+     </div> 
+     <div class="row mt-3"> 
+         <div class="col-12"> 
+             <input type="submit" value="Buscar" class="btn btn-primary" /> 
+             <a class="btn btn-info" asp-action="Create">Ir a crear</a> 
+        </div> 
+     </div> 
+ </form> 
+        </div>
+
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0" id="myTable">
+                    <thead class="table-light">
+                         <tr> 
+             <th> 
+                     @Html.DisplayNameFor(model => model.ProductName) 
+             </th> 
+             <th> 
+                     @Html.DisplayNameFor(model => model.Description)    
+              </th> 
+             <th> 
+                     @Html.DisplayNameFor(model => model.Price) 
+             </th> 
+             <th> 
+                     @Html.DisplayNameFor(model => model.PurchasePrice) 
+             </th> 
+
+             <th> 
+                     @Html.DisplayNameFor(model => model.Brand) 
+             </th> 
+             <th> 
+                     @Html.DisplayNameFor(model => model.Warehouse) 
+             </th> 
+             <th>
+
+             </th> 
+          </tr> 
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                          <td> 
+                             @Html.DisplayFor(modelItem => item.ProductName) 
+                         </td> 
+                         <td> 
+                             @Html.DisplayFor(modelItem => item.Description) 
+                         </td> 
+                         <td> 
+                             @Html.DisplayFor(modelItem => item.Price) 
+                         </td> 
+                        <td> 
+                             @Html.DisplayFor(modelItem => item.PurchasePrice) 
+                         </td> 
+                
+                         <td> 
+                             @Html.DisplayFor(modelItem => item.Brand.BrandName) 
+                         </td> 
+                         <td> 
+                             @Html.DisplayFor(modelItem => item.Warehouse.WarehouseName) 
+                          </td> 
+ 
+                                <td class="text-end">
+                                    <div class="btn-group btn-group-sm" role="group">
+                                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-outline-primary me-1">
+                                            <i class="bi bi-pencil me-1"></i> Editar
+                                        </a>
+                                        <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-outline-info me-1">
+                                            <i class="bi bi-info-circle me-1"></i> Detalles
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger">
+                                            <i class="bi bi-trash me-1"></i> Eliminar
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @section Scripts {
     <script>
         $(document).ready(function() {
@@ -128,7 +289,9 @@
             // });
 
              $('#myTable').DataTable({
-               "language":languageTable
+               "language":languageTable,
+                "searching": false,
+                 "lengthChange": false
              });
         });
     </script>

@@ -19,9 +19,18 @@ namespace AECS20250324.AppWebMVC.Controllers
         }
 
         // GET: Warehouse
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(Warehouse bodega , int topRegistro = 10)
         {
-            return View(await _context.Warehouses.ToListAsync());
+
+            var query = _context.Warehouses.AsQueryable();
+            if (!string.IsNullOrWhiteSpace(bodega.WarehouseName))
+                query = query.Where(s => s.WarehouseName.Contains(bodega.WarehouseName));
+            if (topRegistro > 0)
+                query = query.Take(topRegistro);
+
+            query = query.OrderByDescending(s => s.Id);
+
+            return View(await query.ToListAsync());
         }
 
         // GET: Warehouse/Details/5

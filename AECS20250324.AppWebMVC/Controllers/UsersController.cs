@@ -48,6 +48,13 @@ namespace AECS20250324.AppWebMVC.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult search(string valor)
+        {
+            
+            return Json(new { mensaje = "Dato recibido correctamente" }); // Envía una respuesta JSON
+        }
+
         // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.

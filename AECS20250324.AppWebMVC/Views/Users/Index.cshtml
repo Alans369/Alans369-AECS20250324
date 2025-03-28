@@ -6,6 +6,8 @@
 
 <h1>Index</h1>
 
+<input type="text" id="miInput" />
+
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -53,3 +55,36 @@
 }
     </tbody>
 </table>
+
+@section Scripts {
+    
+    <script>
+         $(document).ready(function() {
+                    let temporizador;
+        $('#miInput').on('input', function() {
+            clearTimeout(temporizador);
+            temporizador = setTimeout(function() {
+                let textoBusqueda = $('#miInput').val();
+                // Aquí realiza la llamada Ajax a tu servicio de búsqueda
+                console.log("Buscando:", textoBusqueda);
+            }, 300); // Retraso de 300 milisegundos
+
+
+            $.ajax({
+                url: '@Url.Action("Search")',
+                type: 'POST',
+                data: { valor: valorInput },
+                success: function (value) {
+                    Console.log(value)
+                   
+                }
+            });
+        });
+        });
+
+
+        
+
+
+    </script>
+}

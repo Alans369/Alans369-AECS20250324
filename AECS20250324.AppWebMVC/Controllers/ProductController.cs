@@ -11,7 +11,7 @@ namespace AECS20250324.AppWebMVC.Controllers
 {
 
     //cambiosd desd endedneudue
-    //un comit nuevo de preuba
+    //un comit nuevo 
     public class ProductController : Controller
     {
         private readonly Test20250324DbContext _context;
